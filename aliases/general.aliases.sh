@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 #  ---------------------------------------------------------------------------
 #
@@ -153,3 +154,133 @@ alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:       Show
 #   ---------------------------------------
 #   9.  REMINDERS & NOTES
 #   ---------------------------------------
+
+#Comandos do centos
+#alias yum='sudo yum'
+#alias update='sudo yum update'
+#alias upgrade='sudo yum upgrade'
+############################################
+#Openmandriva comandos 
+#alias rpm='sudo rpm'
+#alias urpmi='sudo urpmi'
+#alias urpme='sudo urpme'
+# comandos para atualizar
+#alias update='sudo urpmi --auto-select --auto-update'
+############################################
+#Opensuse comandos
+#alias zypper="sudo zypper"
+# comandos para atualizar
+#alias update="sudo zypper up"
+#alias refresh="sudo zypper ref"
+############################################
+# comandos de distros Debian/Ubuntu e derivados #
+# instalar via apt-get
+alias apt-get="sudo apt-get"
+alias updatey="sudo apt-get --yes"
+alias refresh="sudo apt-get update"
+alias dpkg='sudo dpkg'
+alias reparar="sudo apt-get -f install"
+#p comando para atualizar
+alias update='sudo apt-get update && sudo apt-get upgrade'
+############################################
+alias reboot="sudo reboot"
+alias c="clear"
+alias eu="hostname -i | cut -d' ' -f1"
+alias meuip="/sbin/ip a | grep inet | cut -d ":" -f 2 | tr -d a-z,A-Z,-"
+alias eu="inxi -v 1"
+alias ls='ls --color=auto'
+# ver meus hosts em /etc/hosts
+alias hosts='cat /etc/hosts'
+#gerenciar servicos com sudo
+alias service='sudo /usr/sbin/service'
+alias systemctl='sudo /bin/systemctl'
+#docker comandos
+alias dls="docker images"
+alias dps="docker ps"
+alias drm="docker rm"
+alias drmi="docker rmi -f"
+#comandos para compactar e extrair arquivos
+alias targz="tar -czvf"
+alias untar="tar xvzf"
+alias ungz2="tar xvjf"
+# comandos curtos#
+alias h='history'
+alias j='jobs -l'
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime='now'
+alias nowdate='date +"%d-%m-%Y"'
+alias vi='vim'
+alias svim='sudo vim'
+alias svi='sudo vi'
+alias vis='vim "+set si"'
+alias edit='vim'
+alias abrir="vim"
+alias ports='netstat -tulanp'
+alias ebash="vim ~/.bashrc"
+alias du="du -hs"
+#lias listar='ls -lh | awk '{print $9" "$5}''
+## atalho para o iptables#
+alias ipt='sudo /sbin/iptables'
+ 
+# visualizar regras do iptables #
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+alias firewall='iptlist'
+# obter cabecalho de site #
+alias header='curl -I' 
+# verificar se o site suporta mod_deflate para compressao gzip
+alias headerc='curl -I --compress'
+# confirmacao #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+alias wget='wget -c'
+alias df='df -H'
+alias du='du -ch'
+# tornar-se root #
+alias root='sudo -i'
+#alias su='sudo -i'
+# informacao de memoria ## 
+alias meminfo='free -m -l -t'
+
+## ver os processos comilao de memoria, como google chrome
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias psaux='ps aux | grep '
+## ver os processos comilao de cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+## Ver informacao do processador ##
+alias cpuinfo='lscpu'
+## sistemas mais antigos/proc/cpuinfo ##
+##alias cpuinfo='less /proc/cpuinfo' ##
+## Ver informacao do GPU do desktop / laptop## 
+#alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+#comandos complementares
+alias teste='ping 8.8.8.8'
+alias br='localectl set-keymap pt_br pt_br'
+alias us='localectl set-keymap us us'
+alias ru='setxbmap ru'
+alias я='setxkbmap br'
+#django atalho
+alias pymanage="./manage.py"
+#alias pip='sudo pip'
+alias pyrunserver="./manage.py runserver"
+alias pymakemigrations='./manage.py makemigrations'
+alias pymigrate='./manage.py migrate'
+alias pyapp='python manage.py startapp'
+alias djangoecommerce='source activate djangoecommerce'
+alias cooplinha='source activate cooplinha'
+alias miniprompt='PS1="(`basename \"$VIRTUAL_ENV\"`):/\W$ "'
+alias coopervap='source activate coopervap'
+alias cel='conda env list |grep "*"'
+####################################
+#kaspersky comandos
+alias kesl-control='sudo /opt/kaspersky/kesl/bin/kesl-control'
+alias kesl-full='sudo /opt/kaspersky/kesl/bin/kesl-control --start-task 2 --progress'
+alias kesl-list='sudo /opt/kaspersky/kesl/bin/kesl-control --get-task-list'
+alias kesl-update='sudo /opt/kaspersky/kesl/bin/kesl-control'
+alias kesl-file='sudo /opt/kaspersky/kesl/bin/kesl-control --scan-file '
